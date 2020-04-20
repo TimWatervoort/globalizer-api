@@ -16,4 +16,3 @@ defmodule GlobalizerApiWeb.Router do
     end
   end
 end
-gac ""
