@@ -3,6 +3,7 @@ defmodule GlobalizerApiWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CORSPlug, origin: "http://localhost:3000"
   end
 
   scope "/", GlobalizerApiWeb do
@@ -13,6 +14,7 @@ defmodule GlobalizerApiWeb.Router do
       post "/signup", UserController, :create
       post "/signin", UserController, :signin
       get "/", UserController, :index
+      get "/:id", UserController, :show
     end
   end
 end

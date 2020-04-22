@@ -20,6 +20,15 @@ defmodule GlobalizerApiWeb.UserView do
     }
   end
 
+  def render("user.json", %{user: user}) do
+    %{
+      id: user.id,
+      email: user.email,
+      location: user.location,
+      username: user.username
+    }
+  end
+
   def render("user_display.json", %{user: user}) do
     %{
       id: user.id,
